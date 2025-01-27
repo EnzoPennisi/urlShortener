@@ -5,6 +5,8 @@ D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\exam
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\controller\UserController.java
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\dto\UrlRequestDto.java
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\dto\UrlResponseDto.java
+D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\dto\UrlShortResponseDto.java
+D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\dto\UserResponseDto.java
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\entity\Url.java
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\entity\User.java
 D:\Enzo\Programacion\PROYECTOS\shortUrl\back\urlShortener\src\main\java\com\example\urlShortener\repository\UrlRepository.java

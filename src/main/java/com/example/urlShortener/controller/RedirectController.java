@@ -21,8 +21,9 @@ public class RedirectController {
     public ResponseEntity<Object> redirectToOriginalLink(@PathVariable String shortenedLink) {
 
         try {
-            Url url = urlService.findByShortenedLink(shortenedLink)
-                    .orElseThrow(() -> new Exception("Url no encontrada"));
+            Url url = urlService.findByShortenedLink(shortenedLink);
+
+            urlService.incrementAccessCount(url);
 
             // Crear headers de redirección
             HttpHeaders headers = new HttpHeaders();

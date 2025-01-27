@@ -1,6 +1,7 @@
 package com.example.urlShortener.controller;
 
 import com.example.urlShortener.dto.UrlRequestDto;
+import com.example.urlShortener.dto.UrlShortResponseDto;
 import com.example.urlShortener.service.UrlService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +14,19 @@ public class UrlController {
 
     private final UrlService urlService;
 
-    // GET: http://localhost:8080/api/url/{idUser}
-    @GetMapping("/{idUser}")
+    // GET: http://localhost:8080/api/url/{id}
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUrlById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(urlService.findById(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body("Error al obtener la url");
+        }
+    }
+
+    // GET: http://localhost:8080/api/url/user/{idUser}
+    @GetMapping("/user/{idUser}")
     public ResponseEntity<?> getUrlsByUser(@PathVariable Long idUser) {
         try {
             return ResponseEntity.ok(urlService.findByUserId(idUser));
@@ -24,11 +36,11 @@ public class UrlController {
         }
     }
 
-    // POST: http://localhost:8080/api/url/shorten/
-    @PostMapping("/shorten")
+    // POST: http://localhost:8080/api/url
+    @PostMapping("")
     public ResponseEntity<?> shortenUrl(@RequestBody UrlRequestDto urlRequestDto) {
         try {
-            String shortenedLink = urlService.saveShortUrl(urlRequestDto);
+            UrlShortResponseDto shortenedLink = urlService.saveShortUrl(urlRequestDto);
             return ResponseEntity.ok(shortenedLink);
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,8 +48,8 @@ public class UrlController {
         }
     }
 
-    // PATCH: http://localhost:8080/api/url/update/{idUrl}
-    @PatchMapping("/update/{idUrl}")
+    // PATCH: http://localhost:8080/api/url/{idUrl}
+    @PatchMapping("/{idUrl}")
     public ResponseEntity<?> updateUrl(@PathVariable Long idUrl, @RequestBody UrlRequestDto urlRequestDto) {
         try {
             urlService.updateUrl(idUrl, urlRequestDto);
@@ -48,8 +60,8 @@ public class UrlController {
         }
     }
 
-    // DELETE: http://localhost:8080/api/url/delete/
-    @DeleteMapping("/delete/{idUrl}")
+    // DELETE: http://localhost:8080/api/url/{idUrl}
+    @DeleteMapping("/{idUrl}")
     public ResponseEntity<?> deleteUrl(@PathVariable Long idUrl) {
         try {
             urlService.deleteUrl(idUrl);

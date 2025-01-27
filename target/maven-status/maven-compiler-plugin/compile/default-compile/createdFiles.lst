@@ -3,6 +3,7 @@ com\example\urlShortener\controller\RedirectController.class
 com\example\urlShortener\controller\UserController.class
 com\example\urlShortener\entity\User.class
 com\example\urlShortener\service\UrlServiceImpl.class
+com\example\urlShortener\dto\UrlShortResponseDto.class
 com\example\urlShortener\dto\UrlRequestDto.class
 com\example\urlShortener\repository\UserRepository.class
 com\example\urlShortener\service\UserService.class
@@ -13,4 +14,5 @@ com\example\urlShortener\configuration\AudienceValidator.class
 com\example\urlShortener\UrlShortenerApplication.class
 com\example\urlShortener\entity\Url.class
 com\example\urlShortener\dto\UrlResponseDto.class
+com\example\urlShortener\dto\UserResponseDto.class
 com\example\urlShortener\repository\UrlRepository.class
