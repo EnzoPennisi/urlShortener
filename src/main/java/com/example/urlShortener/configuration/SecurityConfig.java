@@ -39,6 +39,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
                                 .requestMatchers("/","/{shortenedLink}").permitAll() /// Permite el acceso publico para redireccionar
+                                .requestMatchers("/api/url/alive").permitAll() /// Permite el acceso publico para ver si el servidor en funciona
                                 .anyRequest().authenticated() // Cualquier petición debe ser autenticada.
                 )
                 .oauth2ResourceServer(OAuth2ResourceServer ->

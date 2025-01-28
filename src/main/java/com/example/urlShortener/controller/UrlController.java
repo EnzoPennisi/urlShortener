@@ -36,6 +36,13 @@ public class UrlController {
         }
     }
 
+    // GET: http://localhost:8080/api/url/alive
+    // Lo utilizo para ver si el servidor en render esta en funcionamiento
+    @GetMapping("/alive")
+    public ResponseEntity<String> alive() {
+        return ResponseEntity.ok("OK");
+    }
+
     // POST: http://localhost:8080/api/url
     @PostMapping("")
     public ResponseEntity<?> shortenUrl(@RequestBody UrlRequestDto urlRequestDto) {
